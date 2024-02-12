@@ -1,5 +1,17 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-<h1>Food App by using base.html</h1>
+<h1 class="text-center">Food App Page Using Base.Html</h1>
 
+<div class="row row-cols-1 row-cols-md-3 g-4 mx-4 my-2">
+  {% for i in meals %}
+  <div class="col">
+    <div class="card h-100">
+      <img src="{{i.strMealThumb}}" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title text-center">{{i.strMeal}}</h5>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 {% endblock%}
